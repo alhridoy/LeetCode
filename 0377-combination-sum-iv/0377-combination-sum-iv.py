@@ -32,4 +32,16 @@ It turns out to be 7, which represents the number of ways to make up 4 using 1, 
 Final Result:
 numWays[4] = 7
 The function returns 7, indicating that there are 7 ways to make the sum 4 using the numbers 1, 2, and 3.
+
+Time Complexity 
+
+O(n⋅target). We do 
+n=len(nums) checks every time we compute numWays[i], and we compute numWays[i] 
+
+target times.
+
+Space Complexity 
+
+)
+O(target)
         '''
