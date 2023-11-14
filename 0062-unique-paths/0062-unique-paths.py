@@ -1,6 +1,23 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         
+        row = [1]*n
+        
+        
+        for i in range(m-1):# last row
+            newRow = [1]*n # fill all by one
+            
+            for j in range(n-2,-1,-1):# before the last colmnb
+                newRow[j]=newRow[j+1]+ row[j]
+            row = newRow
+        return row[0]
+                
+                
+      
+    
+'''
+
+  
         numPaths = [[0 for _ in range(n)] for _ in range(m)]
         
         for i in range(0, m):
@@ -15,8 +32,6 @@ class Solution:
                 #recursion
                 numPaths[i][j]=numPaths[i-1][j]+numPaths[i][j-1]
         return numPaths[m-1][n-1]
-    
-'''
 
         Initialize the numPaths matrix:
 
@@ -59,6 +74,8 @@ numPaths[1][2] = numPaths[1][1] + numPaths[0][2] = 2 + 1 = 3
 
         # Of the total number of moves, pick some moves to be down
         return math.comb(total_moves, down_moves)
+        Time complexity: 
+# O(n * m) O(n)
         
 '''
         
