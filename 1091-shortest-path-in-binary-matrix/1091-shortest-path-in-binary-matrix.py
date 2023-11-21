@@ -10,7 +10,7 @@ class Solution:
             if (min(r, c) < 0 or max(r, c) >= N or
                 grid[r][c]):
                 continue
-            if r == N - 1 and c == N - 1:
+            if r == N - 1 and c == N - 1: # last cell
                 return length
             for dr, dc in direct:
                 if (r + dr, c + dc) not in visit:
